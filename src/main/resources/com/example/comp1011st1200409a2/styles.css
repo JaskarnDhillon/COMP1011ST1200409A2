@@ -1,0 +1,23 @@
+#title{
+    -fx-font-size: 50px;
+    -fx-text-fill: #f4f4f4;
+    -fx-background-color: none;
+}
+.root{
+    -fx-background-image: url("imgs/background.jpg");
+    -fx-background-size: cover;
+    -fx-font-size: 20px;
+}
+.button{
+    -fx-text-fill: #0e0e0e;
+    -fx-background-color: #f4f4f4;
+    -fx-font-size: 20px;
+    -fx-padding: 10px;
+    -fx-border-radius: 20pt;
+    -fx-background-radius: 20pt;
+    -fx-border-color:#0e0e0e;
+    -fx-border-width: 2px;
+}
+.label{
+    -fx-text-fill: #f4f4f4;
+}
