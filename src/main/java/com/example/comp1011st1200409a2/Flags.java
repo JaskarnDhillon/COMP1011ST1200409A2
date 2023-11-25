@@ -1,14 +1,14 @@
 package com.example.comp1011st1200409a2;
 
 public class Flags {
-    private String svg;
+    private String png;
 
-    public String getSvg() {
-        return svg;
+    public String getPng() {
+        return png;
     }
 
     @Override
     public String toString() {
-        return String.format(svg);
+        return String.format(png);
     }
 }
