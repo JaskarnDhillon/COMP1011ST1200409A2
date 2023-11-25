@@ -14,7 +14,7 @@
 
 <AnchorPane prefHeight="600.0" prefWidth="800.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comp1011st1200409a2.CountryInfoViewController">
    <children>
-      <VBox alignment="TOP_CENTER" prefHeight="600.0" prefWidth="800.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <VBox alignment="TOP_CENTER" prefHeight="600.0" prefWidth="800.0" spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Label id="title" fx:id="countryNameLabel" text="Label" />
             <ImageView fx:id="countryImageView" fitHeight="250.0" pickOnBounds="true" preserveRatio="true">
@@ -23,23 +23,47 @@
                </image>
             </ImageView>
             <Label text="Country Information" />
-            <GridPane>
+            <GridPane gridLinesVisible="true" prefWidth="300.0" VBox.vgrow="ALWAYS">
               <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="448.8442077636719" minWidth="10.0" prefWidth="372.9752502441406" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="558.9285736083984" minWidth="10.0" prefWidth="367.0247497558594" />
               </columnConstraints>
               <rowConstraints>
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="46.462890625" minHeight="10.0" prefHeight="33.074249267578125" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="37.839141845703125" minHeight="10.0" prefHeight="27.425750732421875" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Label fx:id="nameLabel" text="Label" />
-                  <Label fx:id="capitalLabel" text="Label" GridPane.columnIndex="1" />
-                  <Label fx:id="regionLabel" text="Label" GridPane.rowIndex="1" />
-                  <Label fx:id="subregionLabel" text="Label" GridPane.rowIndex="2" />
-                  <Label fx:id="areaLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <Label fx:id="populationLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Label fx:id="nameLabel" alignment="TOP_LEFT" text="Label">
+                     <padding>
+                        <Insets bottom="20.0" left="10.0" right="10.0" top="20.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="capitalLabel" alignment="TOP_LEFT" text="Label" GridPane.columnIndex="1">
+                     <padding>
+                        <Insets bottom="20.0" left="10.0" right="10.0" top="20.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="regionLabel" alignment="TOP_LEFT" text="Label" GridPane.rowIndex="1">
+                     <padding>
+                        <Insets bottom="20.0" left="10.0" right="10.0" top="20.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="subregionLabel" alignment="TOP_LEFT" text="Label" GridPane.rowIndex="2">
+                     <padding>
+                        <Insets bottom="20.0" left="10.0" right="10.0" top="20.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="areaLabel" alignment="TOP_LEFT" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <padding>
+                        <Insets bottom="20.0" left="10.0" right="10.0" top="20.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="populationLabel" alignment="TOP_LEFT" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <padding>
+                        <Insets bottom="20.0" left="10.0" right="10.0" top="20.0" />
+                     </padding>
+                  </Label>
                </children>
                <VBox.margin>
                   <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />

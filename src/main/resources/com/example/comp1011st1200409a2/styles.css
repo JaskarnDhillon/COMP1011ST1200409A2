@@ -21,3 +21,17 @@
 .label{
     -fx-text-fill: #f4f4f4;
 }
+.list-cell:even{
+    -fx-background-color: lightgrey;
+}
+.list-view{
+    -fx-border-color:#0e0e0e;
+    -fx-border-width: 2px;
+}
+.list-cell{
+    -fx-border-radius: 5pt;
+    -fx-background-radius: 5pt;
+    -fx-border-color:#0e0e0e;
+    -fx-border-width: 2px;
+}
+

@@ -47,7 +47,7 @@ public class CountryListViewController {
         }catch (Exception e){
             countriesListView.getItems().clear();
             resultsLabel.setVisible(true);
-            resultsLabel.setText("No countries/country found matching: "+searchTerm);
+            resultsLabel.setText("No countries found matching: "+searchTerm);
         }
     }
 
