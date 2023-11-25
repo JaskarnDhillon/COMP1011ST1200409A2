@@ -20,7 +20,7 @@ public class Main extends Application {
     public static void main(String[] args) {
 //        launch();
         try {
-            APIUtility.callAPI("United");
+
         } catch (Exception e) {
             e.printStackTrace();
         }
