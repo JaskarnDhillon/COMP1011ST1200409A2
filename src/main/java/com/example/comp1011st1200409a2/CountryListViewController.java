@@ -52,8 +52,10 @@ public class CountryListViewController {
     }
 
     @FXML
-    void getCountryDetails(ActionEvent event) {
-
+    void getCountryDetails(ActionEvent event) throws IOException {
+        CountryInfo countrySelected = countriesListView.getSelectionModel().getSelectedItem();
+        SceneChanger.changeScenes
+                (event,"country-info-view.fxml", String.valueOf(countrySelected.getName()));
     }
 
     @FXML

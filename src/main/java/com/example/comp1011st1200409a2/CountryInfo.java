@@ -39,6 +39,7 @@ public class CountryInfo {
         return flags;
     }
 
+
     public String toString(){
         return String.format(String.valueOf(name));
     }

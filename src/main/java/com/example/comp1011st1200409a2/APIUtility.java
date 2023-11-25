@@ -19,7 +19,6 @@ import java.util.List;
 
 public class APIUtility {
 
-    private static ArrayList<Object> array;
     public static CountryInfo[] callAPI(String countryName) throws IOException, InterruptedException {
         countryName = countryName.replaceAll(" ","%20");
 
@@ -36,10 +35,8 @@ public class APIUtility {
                 .BodyHandlers
                 .ofString());
 
-//        String updatedResponse = "{\"search\":"+httpResponse+"}";
         Gson gson = new Gson();
 
         return gson.fromJson(httpResponse.body(), CountryInfo[].class);
-//        return gson.fromJson(httpResponse.body(), APIResponse.class);
     }
 }
