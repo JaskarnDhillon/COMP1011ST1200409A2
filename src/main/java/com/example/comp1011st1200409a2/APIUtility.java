@@ -19,6 +19,16 @@ import java.util.List;
 
 public class APIUtility {
 
+    /**
+     * method below accepts a string a parameter and sends a get request
+     * to the countries api via a uri.
+     * the response is then grabbed and returns a gson from the json response,
+     * which populates an array of CountryInfo objects
+     * @param countryName
+     * @return
+     * @throws IOException
+     * @throws InterruptedException
+     */
     public static CountryInfo[] callAPI(String countryName) throws IOException, InterruptedException {
         countryName = countryName.replaceAll(" ","%20");
 

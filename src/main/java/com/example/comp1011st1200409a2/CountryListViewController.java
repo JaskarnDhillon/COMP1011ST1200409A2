@@ -31,6 +31,16 @@ public class CountryListViewController {
     @FXML
     private TextField searchTextField;
 
+    /**
+     * method below populates a list view after the user types into the
+     * search text field and clicks a button.
+     * If the search is valid and does not throw an exception
+     * the listview + all corresponding labels will be populated via updateLabels()
+     * else a label will be populated with an error message
+     * @param event
+     * @throws IOException
+     * @throws InterruptedException
+     */
     @FXML
     void searchCountry(ActionEvent event) throws IOException, InterruptedException {
         countryVBox.setVisible(false);
@@ -51,6 +61,12 @@ public class CountryListViewController {
         }
     }
 
+    /**
+     * method directs the user to another scene via changeScenes(),
+     * while storing a string value to help populate the next scene
+     * @param event
+     * @throws IOException
+     */
     @FXML
     void getCountryDetails(ActionEvent event) throws IOException {
         CountryInfo countrySelected = countriesListView.getSelectionModel().getSelectedItem();
@@ -58,6 +74,10 @@ public class CountryListViewController {
                 (event,"country-info-view.fxml", String.valueOf(countrySelected.getName()));
     }
 
+    /**
+     * method on initialization will set certain
+     * members on the scene
+     */
     @FXML
     public void initialize(){
         countryVBox.setVisible(false);
@@ -74,6 +94,9 @@ public class CountryListViewController {
                 });
     }
 
+    /**
+     * method sets the text for resultsLabel
+     */
     private void updateLabels(){
         resultsLabel.setText("Results: " + countriesListView.getItems().size() + " countries/country");
     }

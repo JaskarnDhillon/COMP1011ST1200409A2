@@ -35,13 +35,31 @@ public class CountryInfoViewController implements LoadData{
     @FXML
     private Label subregionLabel;
 
+    /**
+     * method below references the SceneChanger class
+     * and will take the user to another view
+     * when a button in the view is clicked
+     * @param event
+     * @throws IOException
+     */
     @FXML
     void goBack(ActionEvent event) throws IOException {
         SceneChanger.changeScenes(event, "country-list-view.fxml");
     }
 
+    /**
+     * method below is inherited from the LoadData interface,
+     * the method accepts a param and will generate information
+     * for a new scene
+     * @param countryName
+     */
     public void loadData(String countryName){
         try {
+            /**
+             * all controls had to updated via a steam because json object
+             * was wrapped in an array in the api response, thus took a bit
+             * of extra work to access the class method and return them as Strings
+             */
             CountryInfo[] countryInfos = APIUtility.callAPI(countryName);
             countryNameLabel.setText(Arrays.stream(countryInfos)
                     .map(countryInfo -> countryInfo.getName())
@@ -49,8 +67,8 @@ public class CountryInfoViewController implements LoadData{
             countryImageView.setImage(new Image(Arrays.stream(countryInfos)
                     .map(countryInfo -> countryInfo.getFlags())
                     .toList().toString().replaceAll("\\[|\\]", "")));
-            nameLabel.setText("Name: "+Arrays.stream(countryInfos)
-                    .map(countryInfo -> countryInfo.getName())
+            nameLabel.setText("Common Name: "+Arrays.stream(countryInfos)
+                    .map(countryInfo -> countryInfo.getName().getCommon())
                     .toList().toString().replaceAll("\\[|\\]", ""));
             regionLabel.setText("Region: "+Arrays.stream(countryInfos)
                     .map(countryInfo -> countryInfo.getRegion())
@@ -65,8 +83,8 @@ public class CountryInfoViewController implements LoadData{
                     .map(countryInfo -> countryInfo.getArea())
                     .toList().toString().replaceAll("\\[|\\]", "")+"km\u00B2");
             populationLabel.setText("Population: "+Arrays.stream(countryInfos)
-                    .map(countryInfo -> countryInfo.getArea())
-                    .toList().toString().replaceAll("\\[|\\]", "").replace(".0",""));
+                    .map(countryInfo -> countryInfo.getPopulation())
+                    .toList().toString().replaceAll("\\[|\\]", ""));
 
         } catch (IOException e) {
             throw new RuntimeException(e);

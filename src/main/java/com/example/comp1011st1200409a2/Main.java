@@ -9,6 +9,11 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class Main extends Application {
+    /**
+     * method below creates a scene
+     * @param stage
+     * @throws IOException
+     */
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("country-list-view.fxml"));
@@ -19,6 +24,10 @@ public class Main extends Application {
         stage.show();
     }
 
+    /**
+     * launches a scene
+     * @param args
+     */
     public static void main(String[] args) {
         launch();
     }
